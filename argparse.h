@@ -26,7 +26,6 @@
 #define NEU_RESTART_ALWAYS ((size_t) -2)
 #define NEU_RESTART_ONFAILURE ((size_t) -1)
 
-#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -38,11 +37,9 @@ extern "C" {
 typedef struct {
     bool   daemonized; // flag indicating whether to run as daemon process
     char * conf_file;  // configuration file path
-    char * log_file;   // log file path
     size_t restart;    // restart policy
 } neu_cli_args_t;
 
-/** Parse command line arguments.
  */
 void neu_cli_args_init(neu_cli_args_t *args, int argc, char *argv[]);
 
@@ -50,7 +47,6 @@ void neu_cli_args_init(neu_cli_args_t *args, int argc, char *argv[]);
  */
 void neu_cli_args_fini(neu_cli_args_t *args);
 
-#ifdef __cplusplus
 }
 #endif
 
